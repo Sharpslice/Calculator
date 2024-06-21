@@ -1,0 +1,89 @@
+#calculator{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    
+    border: 2px solid;
+    border-radius: 7px;
+    width: 250px;
+    height: 400px;
+    padding: 5px;
+}
+
+#screen{
+    background-color: black;
+    
+    flex:0.4;
+
+}
+#keypad{
+    display: flex;
+    
+    background-color: black;
+    flex:1
+   
+}
+#miscPad{
+    flex:0.75;
+    
+    
+}
+#numPad{
+    display: flex;
+    flex-wrap: wrap;
+    flex:1;
+    
+}
+#operatorPad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex:0.25
+}
+
+
+.miscButtons,.opButtons, .numButtons{
+    box-sizing: border-box;
+   
+    font-size: 25px; /* Adjust font size */
+    height: 50px; /* Allow height to adjust based on content */
+    width: 50px; /* Minimum width to prevent narrow buttons */
+    text-align: center;
+    border-radius: 50%;
+    margin: 5px;
+    
+    border: none;
+    color: white;
+}
+
+.miscButtons{
+    background-color: #d4d4d4;
+    color:black;
+}
+.opButtons{
+    background-color: #FF9500;
+    
+    
+}
+.numButtons{
+    background-color:#505050;
+    margin-right: 8px;
+}
+.numButtons[name="0"]{
+    border-radius: 40%;
+    width: 110px;
+    text-align: left;
+    padding-left: 18px;
+}
+#displayText{
+    color:white;
+    font-size: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+#screen{
+    position: relative;
+}
