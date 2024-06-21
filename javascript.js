@@ -30,14 +30,18 @@ function operate(num1, num2,operator){
             
     }
 }
-window.addEventListener("click",(e)=>{
-    if(e.target.getAttribute("name") === "=")
-    {
-        document.getElementById("displayText").textContent = currentNumber;
-        return;
-    }
-    document.getElementById("displayText").textContent = `${num1} ${operator} ${num2}`;
-})
+document.body.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("miscButtons") || e.target.classList.contains("opButtons") || 
+    e.target.classList.contains("numButtons")  ){
+        if(e.target.getAttribute("name") === "=")
+            {
+                document.getElementById("displayText").textContent = currentNumber;
+                return;
+            }
+            document.getElementById("displayText").textContent = `${num1} ${operator} ${num2}`;
+        }
+    
+        })
 let goToSecondNumber = false;
 const operationButtons = document.querySelectorAll(".opButtons")
 operationButtons.forEach((button)=>{
@@ -76,6 +80,7 @@ numButtons.forEach((button)=>{
     button.addEventListener('click',(e)=>{
         if(!goToSecondNumber)
         {
+            
             num1 +=e.target.getAttribute('name')
             
             console.log(num1);
